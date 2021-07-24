@@ -17,7 +17,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+  //closures allow nested functions to reach into their outer parent scope and pull information, such as internal in this case. However, any variable defined inside of nestedFunction would not be reachable from the outer scope unless it was returned. Basically nested functions can reach into the outer scope to pull in information, but can't be reached into.
 
 
 
@@ -31,10 +31,24 @@ For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you ma
 function summation(num) {
   const array = Array.from(Array(num+1).keys());
   
-  const total = array.reduce(function(sum, item) {
+  return array.reduce(function(sum, item) {
     return sum + item;
   }, 0);
-  return total
+  
+//   let array = [];
+//   let counter = 0;
+
+//   let count = function() {
+//     counter++;
+//     return array.push(counter);
+//   }
+
+//   for (let i = 0; i < num; i++) {
+//     count()
+//   }
+//   return array.reduce(function(sum, item) {
+//     return sum + item;
+//   })
 }
 
 console.log('task 2:', summation(4))
@@ -224,15 +238,28 @@ console.log(cuboidTwo.volume()); // 100
 console.log(cuboidTwo.surfaceArea()); // 130
 
 
-
-
-
 // 🦄 💪 Stretch Task: Extend the base class CuboidMaker with a sub class called CubeMaker.  Find out the formulas for volume and surface area for cubes and create those methods using the dimension properties from CuboidMaker.  Test your work by logging out your volume and surface area. 🦄 💪
   
+class CubeMaker extends CuboidMakerTwo  {
+  constructor(propertiesObj) {
+    super(propertiesObj);
+  }
 
+  volume() {
+    return this.length * this.width * this.height;
+  }
+  surfaceArea() {
+    return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
+  }
+}
 
+let cube = new CubeMaker({
+  length: 4, 
+  width: 5, 
+  height: 5
+})
 
-
+console.log(cube.volume())
 
   /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
   function foo(){
