@@ -39,7 +39,10 @@ Edit this document to include your answers after each question. Make sure to lea
     Window binding - generally an error due to 'this' not being bound do anything, so it binds to the whole window which renders it essentially useless.
     Implicit binding - this is the most common type of binding where 'this' is applied to an object with a method. When the method is invoked, the object to the left of the dot is what 'this' binds to.
     Explicit binding - when 'this' is explicitly bound through .call, .apply or .bind.
+    New Binding - 'this' would be bound to an object that is being constructed using the new keyword. 
 5. Why do we need super() in an extended class?
+    Super() is used to relay all of the information from the parent's object.
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
